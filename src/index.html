@@ -13,7 +13,46 @@
   </head>
 
   <body>
-    <h1>Hello from Vite</h1>
+    <main class="main">
+      <div class="container">
+        <div class="app">
+          <h1 class="app__title">Color Scheme Generator</h1>
+
+          <div class="app__body">
+            <header class="app__controls">
+              <div class="colorInput">
+                <input
+                  type="color"
+                  name="seed-color"
+                  id="seed-color"
+                  value="#0000FF"
+                />
+              </div>
+              <select name="color-scheme-mode" id="color-scheme-mode"></select>
+              <button>Get color scheme</button>
+            </header>
+            <div class="colors">
+              <ul class="color-panels" id="color-panels">
+                <li class="colorPanel"></li>
+                <li class="colorPanel"></li>
+                <li class="colorPanel"></li>
+                <li class="colorPanel"></li>
+                <li class="colorPanel"></li>
+              </ul>
+              <ul class="color-labels" id="color-labels">
+                <li class="colorLabel"></li>
+                <li class="colorLabel"></li>
+                <li class="colorLabel"></li>
+                <li class="colorLabel"></li>
+                <li class="colorLabel"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- END app -->
+      </div>
+      <!-- END container -->
+    </main>
 
     <script type="module" src="/main.js"></script>
   </body>
