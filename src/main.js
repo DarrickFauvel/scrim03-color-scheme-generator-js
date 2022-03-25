@@ -32,9 +32,9 @@ const getColorValues = (colors) => {
   return colorValues
 }
 
-const renderColorPanels = (colors) => {
-  const colorPanels = document.getElementById('color-panels')
-  colorPanels.innerHTML = ''
+const renderColorItems = (colors) => {
+  const colorItems = document.querySelector('.colorItems')
+  colorItems.innerHTML = ''
 
   async function copyToClipboard() {
     const prevInnerHTML = this.innerHTML
@@ -60,13 +60,18 @@ const renderColorPanels = (colors) => {
     buttonEl.addEventListener('click', copyToClipboard)
     return buttonEl
   }
+
+  colors.forEach((color) => {
+    const liEl = document.createElement('li')
+    liEl.appendChild(createButton(color))
+    colorItems.appendChild(liEl)
   })
 }
 
 const displayColorScheme = async () => {
   const colorScheme = await fetchColorScheme()
   const colorValues = getColorValues(colorScheme)
-  renderColorPanels(colorValues)
+  renderColorItems(colorValues)
 }
 
 seedColor.addEventListener('change', (e) => {
