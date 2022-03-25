@@ -102,15 +102,19 @@ select:hover {
   box-shadow: inset 0 0 0 1px var(--gray-1);
 }
 
-.color-panels {
-  display: grid;
-  grid-template: repeat(5, calc((50 / 16) * 1em)) / 1fr;
-  gap: 0.4em;
+.colorItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.colorItems li {
+  padding: 0;
 }
 
 @media (min-width: 600px) {
-  .color-panels {
-    grid-template: calc((100 / 16) * 1em) / repeat(5, 1fr);
+  .colorItems {
+    flex-direction: row;
   }
 }
 
