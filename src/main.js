@@ -49,17 +49,17 @@ const renderColorPanels = (colors) => {
     }, 1000)
   }
 
-  colors.forEach((color) => {
-    const liEl = document.createElement('li')
+  const createButton = (color) => {
     const buttonEl = document.createElement('button')
     buttonEl.dataset.color = color
-    buttonEl.classList.add('colorPanel')
+    buttonEl.classList.add('colorButton')
+    buttonEl.setAttribute('title', 'Copy to clipboard')
     buttonEl.style.backgroundColor = color
-    buttonEl.innerHTML = `<span>${color}</span>
+    buttonEl.innerHTML = /*html*/ `<span>${color}</span>
     <img src='./images/clipboard-copy.svg' width='24' height='24' alt='copy to clipboard icon'>`
     buttonEl.addEventListener('click', copyToClipboard)
-    liEl.appendChild(buttonEl)
-    colorPanels.appendChild(liEl)
+    return buttonEl
+  }
   })
 }
 
