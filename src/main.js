@@ -48,30 +48,25 @@ const renderColorPanels = (colors) => {
       this.style.fontWeight = 'normal'
     }, 1000)
   }
+
   colors.forEach((color) => {
     const liEl = document.createElement('li')
+    const buttonEl = document.createElement('button')
+    buttonEl.dataset.color = color
+    buttonEl.classList.add('colorPanel')
+    buttonEl.style.backgroundColor = color
+    buttonEl.innerHTML = `<span>${color}</span>
+    <img src='./images/clipboard-copy.svg' width='24' height='24' alt='copy to clipboard icon'>`
     buttonEl.addEventListener('click', copyToClipboard)
+    liEl.appendChild(buttonEl)
     colorPanels.appendChild(liEl)
   })
 }
-
-// const renderColorLabels = (colors) => {
-//   const colorLabels = document.getElementById('color-labels')
-//   colorLabels.innerHTML = ''
-
-//   colors.forEach((color) => {
-//     const liEl = document.createElement('li')
-//     liEl.classList.add('colorLabel')
-//     liEl.textContent = color
-//     colorLabels.appendChild(liEl)
-//   })
-// }
 
 const displayColorScheme = async () => {
   const colorScheme = await fetchColorScheme()
   const colorValues = getColorValues(colorScheme)
   renderColorPanels(colorValues)
-  // renderColorLabels(colorValues)
 }
 
 seedColor.addEventListener('change', (e) => {
