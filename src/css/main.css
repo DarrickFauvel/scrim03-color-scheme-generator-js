@@ -36,12 +36,13 @@ ul {
   gap: 2em;
   background-color: var(--gray-8);
   border-radius: var(--radius-2);
-  /* max-width: 550px; */
+  max-width: calc((600 / 16) * 1em);
   padding: calc((24 / 16) * 1em);
 }
 
 .app__controls {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 0.5em;
 }
 
@@ -93,6 +94,7 @@ button {
   border-radius: 4px;
   padding: 1em 1.5em;
   transition: 0.3s ease-in-out;
+  min-width: max-content;
 }
 
 button:hover {
@@ -108,7 +110,7 @@ button:hover {
 }
 
 @media (min-width: 600px) {
-.color-panels {
+  .color-panels {
     grid-template: calc((100 / 16) * 1em) / repeat(5, 1fr);
   }
 }
@@ -130,11 +132,3 @@ button:hover {
 .colorPanel img {
   filter: invert();
 }
-
-.colorLabel {
-  display: grid;
-  place-items: center;
-  text-align: center;
-
-  color: white;
-} */
