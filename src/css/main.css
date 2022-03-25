@@ -34,10 +34,11 @@ ul {
 .app__body {
   display: grid;
   gap: 2em;
+
   background-color: var(--gray-8);
   border-radius: var(--radius-2);
   max-width: calc((600 / 16) * 1em);
-  padding: calc((24 / 16) * 1em);
+  padding: var(--size-5);
 }
 
 .app__controls {
@@ -118,20 +119,31 @@ select:hover {
   }
 }
 
-.colorPanel {
+.colorButton {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5em;
+  width: 100%;
 
   border-radius: 0;
   color: var(--gray-0);
   text-shadow: 0 0 3px var(--gray-9);
   padding: 1em;
-  cursor: pointer;
   transition: background 0.3s ease-out;
 }
 
-.colorPanel img {
+@media (min-width: 600px) {
+  .colorButton {
+    flex-direction: column;
+    min-height: calc((120 / 16) * 1em);
+  }
+}
+
+.colorButton:hover {
+  box-shadow: inset 0 0 0 1px var(--gray-1);
+}
+
+.colorButton img {
   filter: invert();
 }
