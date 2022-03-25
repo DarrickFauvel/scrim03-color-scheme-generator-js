@@ -6,6 +6,12 @@ body {
   background-color: var(--gray-9);
 }
 
+@media (min-width: 600px) {
+  body {
+    place-content: center;
+  }
+}
+
 ul {
   list-style-type: none;
   padding: 0;
