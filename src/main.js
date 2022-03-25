@@ -36,11 +36,21 @@ const renderColorPanels = (colors) => {
   const colorPanels = document.getElementById('color-panels')
   colorPanels.innerHTML = ''
 
+  async function copyToClipboard() {
+    const prevInnerHTML = this.innerHTML
+    await navigator.clipboard.writeText(this.dataset.color)
+    this.innerHTML = 'COPIED!'
+    this.style.backgroundColor = 'var(--gray-9)'
+    this.style.fontWeight = 'bold'
+    setTimeout(() => {
+      this.innerHTML = prevInnerHTML
+      this.style.backgroundColor = this.dataset.color
+      this.style.fontWeight = 'normal'
+    }, 1000)
+  }
   colors.forEach((color) => {
     const liEl = document.createElement('li')
-    liEl.classList.add('colorPanel')
-    liEl.style.backgroundColor = color
-    liEl.textContent = color
+    buttonEl.addEventListener('click', copyToClipboard)
     colorPanels.appendChild(liEl)
   })
 }
