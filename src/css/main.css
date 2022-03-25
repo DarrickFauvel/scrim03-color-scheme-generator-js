@@ -45,6 +45,13 @@ ul {
   gap: 0.5em;
 }
 
+@media (min-width: 600px) {
+  .app__controls {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
 .colorInput {
   display: grid;
   place-content: center;
