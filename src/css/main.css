@@ -112,15 +112,21 @@ button:hover {
 }
 
 .colorPanel {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+
+  border-radius: 0;
   color: var(--gray-0);
   text-shadow: 0 0 3px var(--gray-9);
+  padding: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease-out;
 }
 
-/* .color-labels {
-  display: grid;
-  grid-template: repeat(5, 50px) / 1fr;
+.colorPanel img {
+  filter: invert();
 }
 
 .colorLabel {
