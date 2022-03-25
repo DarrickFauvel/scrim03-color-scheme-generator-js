@@ -22,11 +22,11 @@ ul {
 }
 
 .container {
-  margin-inline: 2em;
+  margin-inline: var(--size-6);
 }
 
 .app {
-  margin-block: 2em;
+  margin-block: var(--size-3);
 }
 
 .app__title {
@@ -37,7 +37,7 @@ ul {
 
 .app__body {
   display: grid;
-  gap: 2em;
+  gap: var(--size-7);
 
   background-color: var(--gray-8);
   border-radius: var(--radius-2);
@@ -48,7 +48,7 @@ ul {
 .app__controls {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: var(--size-2);
 }
 
 @media (min-width: 600px) {
@@ -63,6 +63,7 @@ ul {
   place-content: center;
   background-color: var(--gray-5);
   border-radius: var(--radius-2);
+  padding: var(--size-1);
   transition: var(--transition-1);
 }
 
@@ -74,7 +75,6 @@ input[type='color'] {
   background-color: transparent;
   max-width: 61px;
   height: 43px;
-  /* border: 5px solid #e5e5e5; */
   padding: 0;
 }
 
@@ -84,7 +84,6 @@ select {
   text-align: center;
   border: var(--border-size-1) solid var(--gray-5);
   border-radius: var(--radius-2);
-  transition: 0.3s ease-in-out;
   padding: 0.5em 1em;
   transition: var(--transition-1);
 }
@@ -96,9 +95,8 @@ select:hover {
 .colorSchemeButton {
   background-color: var(--gray-7);
   color: var(--gray-3);
-  border-radius: 4px;
-  padding: 1em 1.5em;
-  transition: 0.3s ease-in-out;
+  border-radius: var(--radius-2);
+  padding: var(--size-3);
   min-width: max-content;
   transition: var(--transition-1);
 }
@@ -128,14 +126,12 @@ select:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5em;
+  gap: var(--size-2);
   width: 100%;
 
-  border-radius: 0;
   color: var(--gray-0);
   text-shadow: 0 0 3px var(--gray-9);
-  padding: 1em;
-  transition: background 0.3s ease-out;
+  padding: var(--size-3);
 }
 
 @media (min-width: 600px) {
@@ -150,5 +146,5 @@ select:hover {
 }
 
 .colorButton img {
-  filter: invert();
+  filter: drop-shadow(0 0 3px var(--gray-6)) invert();
 }
