@@ -1,4 +1,5 @@
 import './css/main.css'
+import clipboardIcon from './images/clipboard-copy.svg'
 const seedColor = document.getElementById('seed-color')
 const colorMode = document.getElementById('color-scheme-mode')
 const button = document.querySelector('button')
@@ -56,7 +57,7 @@ const renderColorItems = (colors) => {
     buttonEl.setAttribute('title', 'Copy to clipboard')
     buttonEl.style.backgroundColor = color
     buttonEl.innerHTML = /*html*/ `<span>${color}</span>
-    <img src='./images/clipboard-copy.svg' width='24' height='24' alt='copy to clipboard icon'>`
+    <img src='${clipboardIcon}' width='24' height='24' alt='copy to clipboard icon'>`
     buttonEl.addEventListener('click', copyToClipboard)
     return buttonEl
   }
