@@ -8,6 +8,7 @@
 body {
   display: grid;
   background-color: var(--gray-9);
+  background-image: var(--gradient-8);
 }
 
 @media (min-width: 600px) {
@@ -29,10 +30,16 @@ ul {
   margin-block: var(--size-3);
 }
 
-.app__title {
+.app__header {
+  margin-bottom: var(--size-3);
+}
+
+.app__header h1 {
   color: var(--gray-0);
   font-size: var(--font-size-4);
-  margin-bottom: var(--size-3);
+}
+
+.app__header p {
 }
 
 .app__body {
